@@ -3,6 +3,61 @@
   "description": "Default role given to authenticated user.",
   "type": "authenticated",
   "permissions": {
+    "meilisearch": {
+      "controllers": {
+        "meilisearch": {
+          "deleteallindexes": {
+            "enabled": false,
+            "policy": ""
+          },
+          "waitfordocumentstobeindexed": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatecollections": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcredentials": {
+            "enabled": false,
+            "policy": ""
+          },
+          "addcollection": {
+            "enabled": false,
+            "policy": ""
+          },
+          "indexdocuments": {
+            "enabled": false,
+            "policy": ""
+          },
+          "batchaddcollection": {
+            "enabled": false,
+            "policy": ""
+          },
+          "addcredentials": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcollections": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getindexes": {
+            "enabled": false,
+            "policy": ""
+          },
+          "reload": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deleteindex": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {}
+    },
     "i18n": {
       "controllers": {
         "content-types": {
@@ -197,36 +252,6 @@
         "price": 0,
         "ratings": 5,
         "registry": "https://registry.npmjs.org/"
-      }
-    },
-    "application": {
-      "controllers": {
-        "article": {
-          "count": {
-            "enabled": false,
-            "policy": ""
-          },
-          "find": {
-            "enabled": false,
-            "policy": ""
-          },
-          "update": {
-            "enabled": false,
-            "policy": ""
-          },
-          "findone": {
-            "enabled": false,
-            "policy": ""
-          },
-          "delete": {
-            "enabled": false,
-            "policy": ""
-          },
-          "create": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
       }
     },
     "content-manager": {
@@ -508,6 +533,36 @@
         "price": 0,
         "ratings": 5,
         "registry": "https://registry.npmjs.org/"
+      }
+    },
+    "application": {
+      "controllers": {
+        "article": {
+          "update": {
+            "enabled": false,
+            "policy": ""
+          },
+          "count": {
+            "enabled": true,
+            "policy": ""
+          },
+          "findone": {
+            "enabled": true,
+            "policy": ""
+          },
+          "find": {
+            "enabled": true,
+            "policy": ""
+          },
+          "delete": {
+            "enabled": false,
+            "policy": ""
+          },
+          "create": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
       }
     },
     "email": {
