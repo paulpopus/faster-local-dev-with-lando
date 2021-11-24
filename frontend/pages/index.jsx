@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 
@@ -15,8 +15,7 @@ function RenderCards(props) {
             <p>{card.description}</p>
           </div>
         </article>
-        )
-      )}
+      ))}
     </>
   )
 }
@@ -34,6 +33,15 @@ function Home(props) {
         <h1 className={styles.title}>
           Welcome to some articles!
         </h1>
+
+        <nav>
+          <Link href='/'>
+            <a>Home</a>
+          </Link>
+          <Link href='/search'>
+            <a>Search</a>
+          </Link>
+        </nav>
 
         <div className={styles.grid}>
           <RenderCards cards={props.data} />
