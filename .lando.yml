@@ -1,0 +1,58 @@
+name: faster-localdev
+env_file:
+  - .env
+proxy:
+  node:
+    - faster-localdev-cms.lndo.site:48291
+    - faster-localdev-site.lndo.site:48292
+  meilisearch:
+    - meilisearch.faster-localdev.lndo.site:48293
+services:
+  node:
+    type: node:14
+    ports:
+      - '48291:48291'
+      - '48292:48292'
+    build:
+      - cd /app/api && yarn install
+  database:
+    type: postgres:13
+    portforward: true
+    creds:
+      database: strapi
+  meilisearch:
+    type: compose
+    app_mount: false
+    services:
+      image: getmeili/meilisearch:v0.19.0
+      command: tini -- /bin/sh -c ./meilisearch
+      ports:
+        - '48293:48293'
+      volumes:
+        - meilisearch:/data.ms
+      environment:
+        MEILI_MASTER_KEY: LandoMeilisearchMasterKey
+        MEILI_ENV: 'development'
+        MEILI_HTTP_ADDR: '0.0.0.0:48293'
+    volumes:
+      meilisearch:
+tooling:
+  yarn:
+    service: node
+  node:
+    service: node
+  psql:
+    service: database
+    user: www-data
+  pg_dump:
+    service: database
+    user: www-data
+  drop_database:
+    service: database
+    user: www-data
+    description: Drops the strapi database
+    cmd:
+      - psql -U postgres -c "REVOKE CONNECT ON DATABASE strapi FROM public"
+      - psql -U postgres -c "DROP DATABASE strapi"
+      - psql -U postgres -c "CREATE DATABASE strapi"
+
