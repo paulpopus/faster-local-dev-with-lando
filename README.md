@@ -2,6 +2,9 @@
 
 A setup of Strapi and Nextjs for the Faster Local Development with Lando live talk. This local installation is running Postgres and Meilisearch along with Strapi inside Lando containers and Nextjs from a separate directory.
 
+[![image](https://user-images.githubusercontent.com/35137243/143505039-7eec90d0-8ff8-4272-ae79-aa539e3734fb.png)](https://www.figma.com/proto/dCb3GckBfiLSO7Oz9lKo9C/Faster-local-development-with-Lando?node-id=1%3A3&viewport=241%2C48%2C0.59&scaling=min-zoom&page-id=1%3A2&starting-point-node-id=1%3A3)
+
+
 [Presentation available at Figma.](https://www.figma.com/proto/dCb3GckBfiLSO7Oz9lKo9C/Faster-local-development-with-Lando?node-id=1%3A3&viewport=241%2C48%2C0.59&scaling=min-zoom&page-id=1%3A2&starting-point-node-id=1%3A3)
 
 Presentation video: tbd
